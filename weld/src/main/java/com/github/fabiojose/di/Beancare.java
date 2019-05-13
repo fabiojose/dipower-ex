@@ -1,5 +1,8 @@
 package com.github.fabiojose.di;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
 import javax.enterprise.context.ApplicationScoped;
 
 /**
@@ -9,6 +12,7 @@ import javax.enterprise.context.ApplicationScoped;
  *
  */
 @ApplicationScoped
+@Retention(RetentionPolicy.RUNTIME)
 public @interface Beancare {
 
 }
