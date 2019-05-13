@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.github.fabiojose.di.core.MyCoreClass;
 import com.github.fabiojose.di.port.Dependency;
+import com.github.fabiojose.di.port.Logging;
 
 /**
  * 
@@ -25,6 +26,9 @@ public class AppTests {
 	
 	@Inject
 	private Dependency my;
+	
+	@Inject
+	private Logging log;
 
 	@Test
 	public void core_ok() {
@@ -37,6 +41,12 @@ public class AppTests {
 	public void dependency_ok() {
 		
 		Assert.assertNotNull(my);
+	}
+	
+	@Test
+	public void log_log() {
+		Assert.assertNotNull(log);
+		log.info(() -> "----> works!");
 	}
 
 }
