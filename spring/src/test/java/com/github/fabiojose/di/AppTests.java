@@ -44,9 +44,15 @@ public class AppTests {
 	}
 	
 	@Test
-	public void log_log() {
+	public void log_ok() {
 		Assert.assertNotNull(log);
 		log.info(() -> "----> works!");
 	}
 
+	@Test
+	public void annotation_ok() {
+		Assert.assertNotNull(
+			MyCoreClass.class.getAnnotations()
+		);
+	}
 }
