@@ -7,6 +7,8 @@ import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 import javax.interceptor.Interceptor;
 
+import com.github.fabiojose.di.port.Logging;
+
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelHandler;
@@ -14,7 +16,6 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Netty things to work well
@@ -23,25 +24,27 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @ApplicationScoped
-@Slf4j
 public class NettyStuff {
 
         private static final int INET_PORT = 8080;
 
         @Inject
         private ChannelHandler channelHandler;
+        
+        @Inject
+        private Logging log;
 
         public void init(
         		@Observes 
         		@Priority(Interceptor.Priority.APPLICATION - 100)
                 @Initialized(ApplicationScoped.class) Object init) throws Exception{
         	
-            log.info(init.toString());
+            log.info(() -> init.toString());
             start();
         }
 
         private void start() throws Exception {
-            log.info("Staring Server on port {}...", INET_PORT);
+            log.info(() -> "Staring Server on port " +  INET_PORT);
             
             EventLoopGroup bossGroup = new NioEventLoopGroup();
             EventLoopGroup workerGroup = new NioEventLoopGroup();
