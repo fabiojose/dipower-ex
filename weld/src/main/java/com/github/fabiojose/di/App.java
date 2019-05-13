@@ -25,6 +25,10 @@ public class App {
         try (SeContainer container = initializer
         		.disableDiscovery()//Disable
         		
+        		/*
+        		 * Every class in the some package as following
+        		 * classes, do not need to be added
+        		 */
         		.addPackages(App.class)
         		.addPackages(MyDependency.class)
         		.addPackages(MyCoreClass.class)
