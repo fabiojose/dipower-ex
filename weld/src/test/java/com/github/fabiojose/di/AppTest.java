@@ -59,4 +59,16 @@ public class AppTest {
 		);
 		log.info(() -> "----> works!");
 	}
+	
+	@Test
+	public void dummy_ok() {
+		Assertions.assertEquals("foobar", core.dummy());
+	}
+	
+	@Test
+	public void annotation_ok() {
+		Assertions.assertNotNull(
+			MyCoreClass.class.getAnnotation(Beancare.class)
+		);
+	}
 }
