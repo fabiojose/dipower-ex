@@ -6,6 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import javax.inject.Singleton;
 
 /**
+ * Inheriting the behavior of {@link Singleton}
  * 
  * @author fabiojose
  *
