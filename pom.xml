@@ -29,6 +29,7 @@
     <module>weld</module>
     <module>spring</module>
     <module>micronaut</module>
+    <module>vertx</module>
   </modules>
 
   <dependencyManagement>
