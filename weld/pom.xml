@@ -22,7 +22,7 @@
     <weld-junit5.version>2.0.0.Final</weld-junit5.version>
 
     <weld.version>3.0.2.Final</weld.version>
-    <netty-all.version>4.1.19.Final</netty-all.version>
+    <netty-all.version>4.1.42.Final</netty-all.version>
     <slf4j.version>1.7.25</slf4j.version>
   </properties>
 
