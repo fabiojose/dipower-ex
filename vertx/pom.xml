@@ -19,7 +19,7 @@
     <maven.compiler.target>1.8</maven.compiler.target>
 
     <junit.version>5.3.1</junit.version>
-    <vertx.version>3.7.0</vertx.version>
+    <vertx.version>3.9.4</vertx.version>
     
     <!-- plugins -->
     <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
